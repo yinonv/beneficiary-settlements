@@ -1,7 +1,10 @@
 import { Loader } from '@googlemaps/js-api-loader';
 
 export class MapService {
-  constructor(private maps: typeof google.maps, private map: google.maps.Map) {}
+  private markers: google.maps.Marker[];
+  constructor(private maps: typeof google.maps, private map: google.maps.Map) {
+    this.markers = [];
+  }
 
   public static async init(apiKey: string) {
     const loader = new Loader({ apiKey });
@@ -13,25 +16,40 @@ export class MapService {
       },
       zoom: 8,
     };
-    const mapElement = document.createElement('div');
-    mapElement.id = 'map';
-    document.getElementById('app')?.append(mapElement);
+    const mapElement = document.getElementById('map') as HTMLElement;
     const { maps } = google;
     const map = new maps.Map(mapElement, mapOptions);
     return new MapService(maps, map);
   }
 
   public addMarker(
-    position: google.maps.LatLng|null|google.maps.LatLngLiteral,
+    position: google.maps.LatLng | null | google.maps.LatLngLiteral,
     icon: string,
     toolTip: string
   ) {
-    new this.maps.Marker({
+    const marker = new this.maps.Marker({
       position,
       icon,
       title: toolTip,
       map: this.map,
       animation: google.maps.Animation.DROP,
     });
+    this.markers.push(marker);
+  }
+
+  public showMarkers(icon: string) {
+    for (const marker of this.markers) {
+      if (marker.getIcon() === icon) {
+        marker.setMap(this.map);
+      }
+    }
+  }
+
+  public hideMarkers(icon: string) {
+    for (const marker of this.markers) {
+      if (marker.getIcon() === icon) {
+        marker.setMap(null);
+      }
+    }
   }
 }
