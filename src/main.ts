@@ -55,9 +55,7 @@ const init = async () => {
     import('bootstrap/dist/css/bootstrap.min.css'),
   ]);
   try {
-    const mapService = await MapService.init(
-      envConfig.VITE_GOOGLE_API_KEY || process.env.GOOGLE_API_KEY as string
-    );
+    const mapService = await MapService.init(envConfig.VITE_GOOGLE_API_KEY);
     for (const bs of beneficiarySettlements) {
       const maxTaxReturn = Math.floor((bs.maxIncome * bs.percent) / 100);
       bs.label = getMarkerLabel(maxTaxReturn);

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "inject-api-key": "echo VITE_GOOGLE_API_KEY=$GOOGLE_API_KEY > ./environment/.env.production",
+    "build": "npm run inject-api-key && tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
