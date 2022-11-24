@@ -38,17 +38,17 @@ export class MapService {
   }
 
   public showMarkers(icon: string) {
-    for (const marker of this.markers) {
-      if (marker.getIcon() === icon) {
-        marker.setMap(this.map);
-      }
-    }
+    this.setMarkersByIcon(icon, true);
   }
 
   public hideMarkers(icon: string) {
+    this.setMarkersByIcon(icon, false);
+  }
+
+  private setMarkersByIcon(icon: string, isVisible: boolean) {
     for (const marker of this.markers) {
       if (marker.getIcon() === icon) {
-        marker.setMap(null);
+        marker.setMap(isVisible ? this.map : null);
       }
     }
   }
