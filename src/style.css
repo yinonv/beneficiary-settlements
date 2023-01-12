@@ -55,4 +55,5 @@ li {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
+  font-size: 15px;
 }
