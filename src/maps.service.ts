@@ -2,7 +2,7 @@ import {Loader} from '@googlemaps/js-api-loader';
 
 export class MapService {
 
-    private readonly markers: google.maps.marker.AdvancedMarkerElement[]
+    private markers: google.maps.marker.AdvancedMarkerElement[]
 
     constructor(private map: google.maps.Map, private marker: google.maps.MarkerLibrary) {
         this.markers = [];
@@ -49,6 +49,13 @@ export class MapService {
 
     public hideMarkers(icon: string) {
         this.setMarkersByIcon(icon, false);
+    }
+
+    public clearMarkers() {
+        for (const marker of this.markers) {
+            marker.map = null
+        }
+        this.markers = []
     }
 
     private setMarkersByIcon(icon: string, isVisible: boolean) {
