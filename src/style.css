@@ -57,3 +57,8 @@ li {
   font-weight: 600;
   font-size: 15px;
 }
+ #year {
+   text-align: center;
+   height: 40px;
+   width: 120px;
+ }
