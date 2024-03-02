@@ -1,7 +1,8 @@
 # Beneficiary Settlements 
 
-See all beneficiary settlements on a google map
+See all of Israel's beneficiary settlements on a google map
 
 https://beneficiary-settlements.netlify.app/
+<a href="https://beneficiary-settlements.netlify.app/" target="_blank"></a>
 
-![image](https://user-images.githubusercontent.com/57749510/212167921-59f7e9a3-88e4-4f12-8343-bd21d63c644e.png)
+![image](./public/preview.png)
