@@ -75,6 +75,11 @@ const drawMap = (mapService: MapService, year: string) => {
             String(maxTaxReturn)
         );
     }
+    const checkBoxes = document.querySelectorAll('input');
+    checkBoxes.forEach(cb => {  // reset checkboxes
+        const target = cb as HTMLInputElement;
+        target.checked = true;
+    })
 }
 
 

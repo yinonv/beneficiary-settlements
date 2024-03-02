@@ -1,5 +1,6 @@
 import {beneficiarySettlements2024, ranges2024} from "./2024";
 import {beneficiarySettlements2023, ranges2023} from "./2023";
+import {beneficiarySettlements2022, ranges2022} from "./2022";
 
 export type BeneficiarySettlement = {
     maxIncome: number;
@@ -16,7 +17,7 @@ export type Ranges = {
     D: Range,
     E: Range
 }
-export type Year = '2024' | '2023'
+export type Year = '2024' | '2023' | '2022'
 
 type DataByYear = {
     [key in Year]: { data: BeneficiarySettlement[]; ranges: Ranges; };
@@ -29,6 +30,10 @@ export const dataByYear: DataByYear = {
     2023: {
         data: beneficiarySettlements2023,
         ranges: ranges2023
+    },
+    2022: {
+        data: beneficiarySettlements2022,
+        ranges: ranges2022
     }
 }
 

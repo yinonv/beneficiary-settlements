@@ -2414,7 +2414,7 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [{
     "percent": 20,
     "coordinates": {"lng": 34.5804169902279, "lat": 31.4514863783502}
 }, {
-    "name": "תרבין א- צאנע ( יישוב )",
+    "name": "תרבין א-צאנע ( יישוב )",
     "maxIncome": 213240,
     "percent": 12,
     "coordinates": {"lng": 34.7379797994889, "lat": 31.3442933236106}
