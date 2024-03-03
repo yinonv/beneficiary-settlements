@@ -1,26 +1,26 @@
-import {beneficiarySettlements2024, ranges2024} from "./2024";
-import {beneficiarySettlements2023, ranges2023} from "./2023";
-import {beneficiarySettlements2022, ranges2022} from "./2022";
+import { beneficiarySettlements2024, ranges2024 } from "./2024";
+import { beneficiarySettlements2023, ranges2023 } from "./2023";
+import { beneficiarySettlements2022, ranges2022 } from "./2022";
 
 export type BeneficiarySettlement = {
     maxIncome: number;
     percent: number;
     name: string;
     coordinates: { lng: number; lat: number };
-    label?: 'A' | 'B' | 'C' | 'D' | 'E';
+    label?: "A" | "B" | "C" | "D" | "E";
 };
-type Range = { min: number, max: number }
+type Range = { min: number; max: number };
 export type Ranges = {
-    A: Range,
-    B: Range,
-    C: Range,
-    D: Range,
-    E: Range
-}
-export type Year = '2024' | '2023' | '2022'
+    A: Range;
+    B: Range;
+    C: Range;
+    D: Range;
+    E: Range;
+};
+export type Year = "2024" | "2023" | "2022";
 
 type DataByYear = {
-    [key in Year]: { data: BeneficiarySettlement[]; ranges: Ranges; };
+    [key in Year]: { data: BeneficiarySettlement[]; ranges: Ranges };
 };
 export const dataByYear: DataByYear = {
     2024: {
@@ -35,7 +35,7 @@ export const dataByYear: DataByYear = {
         data: beneficiarySettlements2022,
         ranges: ranges2022
     }
-}
+};
 
 export const indexToGroup = {
     0: "A",
@@ -43,4 +43,4 @@ export const indexToGroup = {
     2: "C",
     3: "D",
     4: "E"
-}
+};
