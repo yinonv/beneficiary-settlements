@@ -14,7 +14,7 @@ export class MapService {
         const loader = new Loader({ apiKey });
         const [maps, marker] = await Promise.all([
             loader.importLibrary("maps"),
-            await loader.importLibrary("marker")
+            loader.importLibrary("marker")
         ]);
         const mapOptions = {
             center: {
