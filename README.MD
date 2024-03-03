@@ -1,4 +1,4 @@
-# Beneficiary Settlements 
+# Beneficiary Settlements
 
 See all of Israel's beneficiary settlements on a google map
 

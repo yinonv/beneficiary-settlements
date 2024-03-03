@@ -1,64 +1,66 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
 }
+
 body {
-  margin: 0;
+    margin: 0;
 }
 
 ul {
-  list-style: none;
-  width: 100%;
-  padding: 15px !important;
-  background-color: white;
-  border-radius: 5px;
+    list-style: none;
+    width: 100%;
+    padding: 15px !important;
+    background-color: white;
+    border-radius: 5px;
 }
 
 li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 16px;
-  margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 #app {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 }
 
 #side-panel {
-  width: 230px;
-  z-index: 2;
-  position: absolute;
-  top: 100px;
-  left: 10px;
+    width: 230px;
+    z-index: 2;
+    position: absolute;
+    top: 100px;
+    left: 10px;
 }
 
 #map {
-  width: 100%;
-  z-index: 1;
+    width: 100%;
+    z-index: 1;
 }
 
 #legend {
-  position: absolute;
-  top: 100px;
-  z-index: 2;
-  left: 10px;
+    position: absolute;
+    top: 100px;
+    z-index: 2;
+    left: 10px;
 }
 
 .close-panel-item {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 15px;
 }
- #year {
-   text-align: center;
-   height: 40px;
-   width: 120px;
- }
+
+#year {
+    text-align: center;
+    height: 40px;
+    width: 120px;
+}
