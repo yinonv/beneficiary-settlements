@@ -2,6 +2,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 
 export class MapService {
     private markers: google.maps.marker.AdvancedMarkerElement[];
+    private previousInfoWindow: google.maps.InfoWindow;
 
     constructor(
         private maps: google.maps.MapsLibrary,
@@ -9,6 +10,7 @@ export class MapService {
         private marker: google.maps.MarkerLibrary
     ) {
         this.markers = [];
+        this.previousInfoWindow = new maps.InfoWindow();
     }
 
     public static async init(apiKey: string) {
@@ -34,7 +36,7 @@ export class MapService {
         position: google.maps.LatLng | null | google.maps.LatLngLiteral,
         icon: string,
         title: string,
-        text: string,
+        text: string
     ) {
         const content = document.createElement("img");
         content.src = icon;
@@ -46,9 +48,10 @@ export class MapService {
         });
         const infoWindow = new this.maps.InfoWindow();
         marker.addListener("click", () => {
-            infoWindow.close();
+            this.previousInfoWindow.close();
             infoWindow.setContent(text);
             infoWindow.open(marker.map, marker);
+            this.previousInfoWindow = infoWindow;
         });
         this.markers.push(marker);
     }
