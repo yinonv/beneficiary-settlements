@@ -4,6 +4,7 @@ export class MapService {
     private markers: google.maps.marker.AdvancedMarkerElement[];
 
     constructor(
+        private maps: google.maps.MapsLibrary,
         private map: google.maps.Map,
         private marker: google.maps.MarkerLibrary
     ) {
@@ -26,21 +27,28 @@ export class MapService {
         };
         const mapElement = document.getElementById("map") as HTMLElement;
         const map = new maps.Map(mapElement, mapOptions);
-        return new MapService(map, marker);
+        return new MapService(maps, map, marker);
     }
 
     public addMarker(
         position: google.maps.LatLng | null | google.maps.LatLngLiteral,
         icon: string,
-        toolTip: string
+        title: string,
+        text: string,
     ) {
         const content = document.createElement("img");
         content.src = icon;
         const marker = new this.marker.AdvancedMarkerElement({
             position,
             content,
-            title: toolTip,
+            title,
             map: this.map
+        });
+        const infoWindow = new this.maps.InfoWindow();
+        marker.addListener("click", () => {
+            infoWindow.close();
+            infoWindow.setContent(text);
+            infoWindow.open(marker.map, marker);
         });
         this.markers.push(marker);
     }

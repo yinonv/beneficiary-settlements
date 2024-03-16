@@ -83,9 +83,9 @@ export class Layout {
         });
     }
 
-    private drawMap(year: string) {
+    private drawMap(year: Year) {
         this.mapService.clearMarkers();
-        const { data, ranges } = dataByYear[year as Year];
+        const { data, ranges } = dataByYear[year];
         this.setSidePanelText(year, ranges);
         this.addSettlements(data, ranges);
     }
@@ -93,11 +93,14 @@ export class Layout {
     private addSettlements(data: BeneficiarySettlement[], ranges: Ranges) {
         for (const bs of data) {
             const maxTaxReturn = Math.floor((bs.maxIncome * bs.percent) / 100);
+            const maxTaxReturnFormatted = `${this.numFormatter.format(maxTaxReturn)}₪`;
+            const text = `<div class="marker-text" dir="rtl">${bs.name}</div><div dir="rtl">${maxTaxReturnFormatted}</div>`
             bs.label = this.getMarkerLabel(maxTaxReturn, ranges);
             this.mapService.addMarker(
                 bs.coordinates,
                 MarkerIcons[bs.label],
-                String(maxTaxReturn)
+                maxTaxReturnFormatted,
+                text
             );
         }
         // keep existing filters
@@ -108,7 +111,7 @@ export class Layout {
         });
     }
 
-    private setSidePanelText(year: string, ranges: Ranges) {
+    private setSidePanelText(year: Year, ranges: Ranges) {
         this.htmlElements.legendTitle.textContent = `Max Tax Return (${year})`;
         this.htmlElements.taxRanges.forEach((tr, i) => {
             const target = tr as HTMLImageElement;
@@ -123,7 +126,7 @@ export class Layout {
 
     private onYearChange(e: Event) {
         const target = e?.target as HTMLSelectElement;
-        const year = target.value;
+        const year = target.value as Year;
         this.drawMap(year);
     }
 
