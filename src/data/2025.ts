@@ -1,14 +1,14 @@
 import { BeneficiarySettlement, Ranges } from "./beneficiary-settlement";
 
-export const ranges2024: Ranges = {
-    A: { min: 46785, max: 53568 },
-    B: { min: 34118, max: 36388 },
+export const ranges2025: Ranges = {
+    A: { min: 44172, max: 53568 },
+    B: { min: 36249, max: 36388 },
     C: { min: 25588, max: 30794 },
     D: { min: 18000, max: 22392 },
     E: { min: 10264, max: 10264 }
 };
 
-export const beneficiarySettlements2024: BeneficiarySettlement[] = [
+export const beneficiarySettlements2025: BeneficiarySettlement[] = [
     {
         name: "אבו סנאן",
         maxIncome: 186000,
@@ -32,6 +32,12 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
         maxIncome: 219960,
         percent: 14,
         coordinates: { lng: 35.4712894860213, lat: 33.0879437869772 }
+    },
+    {
+        name: "אביגיל",
+        maxIncome: 180000,
+        percent: 10,
+        coordinates: { lng: 35.140556, lat: 31.403611 }
     },
     {
         name: "אבירים",
@@ -424,6 +430,12 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
         coordinates: { lng: 35.5732808414044, lat: 32.6891727147844 }
     },
     {
+        name: "בית חוגלה",
+        maxIncome: 180000,
+        percent: 10,
+        coordinates: { lng: 35.50721, lat: 31.8211 }
+    },
+    {
         name: "בית יוסף",
         maxIncome: 213240,
         percent: 12,
@@ -455,8 +467,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "בני יהודה",
-        maxIncome: 146640,
-        percent: 7,
+        maxIncome: 180000,
+        percent: 10,
         coordinates: { lng: 35.6856126043891, lat: 32.7940689655838 }
     },
     {
@@ -677,8 +689,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "דימונה",
-        maxIncome: 213240,
-        percent: 16,
+        maxIncome: 245400,
+        percent: 18,
         coordinates: { lng: 35.0274193387046, lat: 31.0672437063232 }
     },
     {
@@ -887,7 +899,7 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "טבריה",
-        maxIncome: 186000,
+        maxIncome: 213240,
         percent: 12,
         coordinates: { lng: 35.5258096675475, lat: 32.7872251728776 }
     },
@@ -935,8 +947,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "יאנוח-ג'ת",
-        maxIncome: 146640,
-        percent: 7,
+        maxIncome: 186000,
+        percent: 12,
         coordinates: { lng: 35.243044108469, lat: 32.9801385389795 }
     },
     {
@@ -1049,7 +1061,7 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "ירוחם",
-        maxIncome: 259920,
+        maxIncome: 245400,
         percent: 18,
         coordinates: { lng: 34.9305403882779, lat: 30.9884728303792 }
     },
@@ -1421,8 +1433,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "מגדל",
-        maxIncome: 146640,
-        percent: 7,
+        maxIncome: 180000,
+        percent: 10,
         coordinates: { lng: 35.5076459794958, lat: 32.8364197035404 }
     },
     {
@@ -1679,8 +1691,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "משאבי שדה",
-        maxIncome: 180000,
-        percent: 10,
+        maxIncome: 146640,
+        percent: 7,
         coordinates: { lng: 34.7860293667634, lat: 31.0049170720062 }
     },
     {
@@ -1835,8 +1847,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "נטור",
-        maxIncome: 180000,
-        percent: 10,
+        maxIncome: 213240,
+        percent: 12,
         coordinates: { lng: 35.7534737178332, lat: 32.8530058627115 }
     },
     {
@@ -2033,8 +2045,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "עין גב",
-        maxIncome: 180000,
-        percent: 10,
+        maxIncome: 146640,
+        percent: 7,
         coordinates: { lng: 35.6409444124432, lat: 32.7778898076879 }
     },
     {
@@ -2194,6 +2206,12 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
         coordinates: { lng: 35.0222680479446, lat: 31.1553589492359 }
     },
     {
+        name: "עשהאל",
+        maxIncome: 146640,
+        percent: 7,
+        coordinates: { lng: 35.043806, lat: 31.373722 }
+    },
+    {
         name: "עתניאל",
         maxIncome: 180000,
         percent: 10,
@@ -2249,8 +2267,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "פסוטה",
-        maxIncome: 259920,
-        percent: 14,
+        maxIncome: 213240,
+        percent: 12,
         coordinates: { lng: 35.3101828763122, lat: 33.0480651866684 }
     },
     {
@@ -2291,8 +2309,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "צאלים",
-        maxIncome: 180000,
-        percent: 10,
+        maxIncome: 213240,
+        percent: 12,
         coordinates: { lng: 34.5348305860159, lat: 31.2035924488768 }
     },
     {
@@ -2441,8 +2459,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "רביד",
-        maxIncome: 146640,
-        percent: 7,
+        maxIncome: 180000,
+        percent: 10,
         coordinates: { lng: 35.4638467181075, lat: 32.8504534374134 }
     },
     {
@@ -2549,8 +2567,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "שבי דרום",
-        maxIncome: 180000,
-        percent: 10,
+        maxIncome: 146640,
+        percent: 7,
         coordinates: { lng: 34.63846870560681, lat: 31.466687562913172 }
     },
     {
@@ -2579,8 +2597,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "שדה בוקר",
-        maxIncome: 180000,
-        percent: 10,
+        maxIncome: 146640,
+        percent: 7,
         coordinates: { lng: 34.7937047242101, lat: 30.8714420447307 }
     },
     {
@@ -2855,8 +2873,8 @@ export const beneficiarySettlements2024: BeneficiarySettlement[] = [
     },
     {
         name: "תלם",
-        maxIncome: 180000,
-        percent: 10,
+        maxIncome: 146640,
+        percent: 7,
         coordinates: { lng: 35.0311653566191, lat: 31.5642741122839 }
     },
     {
