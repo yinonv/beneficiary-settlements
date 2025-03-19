@@ -22,7 +22,7 @@ type HtmlElements = {
     checkboxes: NodeListOf<HTMLInputElement>;
 };
 
-const DEFAULT_YEAR = "2025";
+const DEFAULT_YEAR = "2025" as Year;
 
 const MarkerIcons = {
     A: GreenMarkerIcon,
