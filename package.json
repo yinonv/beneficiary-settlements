@@ -9,14 +9,17 @@
     "build": "npm run inject-api-key && tsc && vite build",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": "^20.0.0"
+  },
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.16.6",
+    "@googlemaps/js-api-loader": "^1.16.8",
     "bootstrap": "^5.3.3"
   },
   "devDependencies": {
-    "@types/google.maps": "^3.55.4",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.2",
-    "vite": "^5.1.6"
+    "@types/google.maps": "^3.58.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
   }
 }

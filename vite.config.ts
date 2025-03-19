@@ -6,7 +6,7 @@ export default defineConfig({
         open: true
     },
     preview: {
-        port: "3500",
+        port: 3500,
         open: true
     },
     envDir: "environment"
