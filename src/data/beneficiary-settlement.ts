@@ -1,6 +1,7 @@
-import { beneficiarySettlements2024, ranges2024 } from "./2024";
-import { beneficiarySettlements2023, ranges2023 } from "./2023";
 import { beneficiarySettlements2022, ranges2022 } from "./2022";
+import { beneficiarySettlements2023, ranges2023 } from "./2023";
+import { beneficiarySettlements2024, ranges2024 } from "./2024";
+import { beneficiarySettlements2025, ranges2025 } from "./2025";
 
 export type BeneficiarySettlement = {
     maxIncome: number;
@@ -17,23 +18,27 @@ export type Ranges = {
     D: Range;
     E: Range;
 };
-export type Year = "2024" | "2023" | "2022";
+export type Year = "2022" | "2023" | "2024" | "2025";
 
 type DataByYear = {
     [key in Year]: { data: BeneficiarySettlement[]; ranges: Ranges };
 };
 export const dataByYear: DataByYear = {
-    2024: {
-        data: beneficiarySettlements2024,
-        ranges: ranges2024
+    2022: {
+        data: beneficiarySettlements2022,
+        ranges: ranges2022
     },
     2023: {
         data: beneficiarySettlements2023,
         ranges: ranges2023
     },
-    2022: {
-        data: beneficiarySettlements2022,
-        ranges: ranges2022
+    2024: {
+        data: beneficiarySettlements2024,
+        ranges: ranges2024
+    },
+    2025: {
+        data: beneficiarySettlements2025,
+        ranges: ranges2025
     }
 };
 
