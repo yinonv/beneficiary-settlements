@@ -13,8 +13,8 @@ export class MapService {
         this.previousInfoWindow = new maps.InfoWindow();
     }
 
-    public static async init(apiKey: string) {
-        const loader = new Loader({ apiKey });
+    public static async init() {
+        const loader = new Loader({ apiKey: import.meta.env.VITE_GOOGLE_API_KEY });
         const [maps, marker] = await Promise.all([
             loader.importLibrary("maps"),
             loader.importLibrary("marker")
@@ -47,7 +47,7 @@ export class MapService {
             map: this.map
         });
         const infoWindow = new this.maps.InfoWindow();
-        marker.addListener("click", () => {
+        marker.addListener("gmp-click", () => {
             this.previousInfoWindow.close();
             infoWindow.setContent(text);
             infoWindow.open(marker.map, marker);
