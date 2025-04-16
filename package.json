@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "inject-api-key": "echo VITE_GOOGLE_API_KEY=$GOOGLE_API_KEY > ./environment/.env.production",
-    "build": "npm run inject-api-key && tsc && vite build",
+    "create-env-file": "./scripts/create-env-file.sh",
+    "build": "npm run create-env-file && tsc && vite build",
     "preview": "vite preview"
   },
   "engines": {
@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.8",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.5",
+    "firebase": "^11.6.0"
   },
   "devDependencies": {
     "@types/google.maps": "^3.58.1",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.2"
+    "typescript": "^5.8.3",
+    "vite": "^6.3.0"
   }
 }
