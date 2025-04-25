@@ -71,7 +71,7 @@ class ChatUI {
             role === "user"
                 ? "אתה"
                 : role === "assistant"
-                  ? "Assistant"
+                  ? "עוזר"
                   : "מערכת";
         roleElement.style.textAlign = "right";
 
