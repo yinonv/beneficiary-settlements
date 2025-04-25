@@ -48,16 +48,16 @@ export class ChatService {
             if (fullResponse) {
                 onResponse(fullResponse);
             } else {
-                onError("No response received from server");
+                onError("לא התקבלה תשובה מהשרת");
             }
         } catch (error) {
             console.error("Failed to send message:", error);
             if (error instanceof Error && error.message.includes("401")) {
                 onError(
-                    "Unauthorized. Please contact support at beneficiary-settlements@googlegroups.com."
+                    "אין גישה. יש לפנות ל- beneficiary-settlements@googlegroups.com."
                 );
             } else {
-                onError("Failed to send message. Please try again.");
+                onError("ארעה שגיאה, אנא נסה שנית.");
             }
         }
     }

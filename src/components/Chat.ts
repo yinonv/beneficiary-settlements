@@ -27,7 +27,7 @@ class ChatUI {
     public enableChat(): void {
         this.elements.messageInput.disabled = false;
         this.elements.sendButton.disabled = false;
-        this.elements.messageInput.placeholder = "Ask anything";
+        this.elements.messageInput.placeholder = "מה תרצה לדעת?";
         this.clearMessages();
     }
 
@@ -35,11 +35,11 @@ class ChatUI {
         this.elements.messageInput.disabled = true;
         this.elements.sendButton.disabled = true;
         this.elements.messageInput.placeholder =
-            "Please log in to chat with the AI assistant...";
+            "אנא התחבר כדי לשוחח עם עוזר הבינה המלאכותית...";
         this.clearMessages();
         this.addMessage(
             "system",
-            "Please log in to start chatting with the AI assistant. The chat will be enabled automatically once you're logged in."
+            "בבקשה התחבר כדי להתחיל לשוחח עם עוזר הבינה המלאכותית. הצ'אט יופעל באופן אוטומטי לאחר שתתחבר."
         );
     }
 
@@ -62,19 +62,23 @@ class ChatUI {
         // Create a new message element
         const messageElement = document.createElement("div");
         messageElement.className = `message ${role}-message`;
+        messageElement.style.direction = "rtl";
+        messageElement.style.textAlign = "right";
 
         const roleElement = document.createElement("div");
         roleElement.className = "message-role";
         roleElement.textContent =
             role === "user"
-                ? "You"
+                ? "אתה"
                 : role === "assistant"
                   ? "Assistant"
-                  : "System";
+                  : "מערכת";
+        roleElement.style.textAlign = "right";
 
         const contentElement = document.createElement("div");
         contentElement.className = "message-content";
         contentElement.textContent = content;
+        contentElement.style.textAlign = "right";
 
         messageElement.appendChild(roleElement);
         messageElement.appendChild(contentElement);
