@@ -1,4 +1,4 @@
-import { Loader } from "@googlemaps/js-api-loader";
+import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
 
 export class MapService {
     private markers: google.maps.marker.AdvancedMarkerElement[];
@@ -14,10 +14,10 @@ export class MapService {
     }
 
     public static async init() {
-        const loader = new Loader({ apiKey: import.meta.env.VITE_GOOGLE_API_KEY });
+        setOptions({ key: import.meta.env.VITE_GOOGLE_API_KEY });
         const [maps, marker] = await Promise.all([
-            loader.importLibrary("maps"),
-            loader.importLibrary("marker")
+            importLibrary("maps"),
+            importLibrary("marker")
         ]);
         const mapOptions = {
             center: {
